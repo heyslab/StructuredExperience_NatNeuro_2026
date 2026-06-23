@@ -195,31 +195,31 @@ implementation details reflect the original analysis environment:
 1. `models_database` is provided separately at
    https://github.com/heyslab/models_database-public/tree/main. It documents the 
    manuscript model metadata and preserves the API expected by these scripts.
-   A sanitized SQL dump is included in the companion `models_database-public`
+   A SQL reflecting the database state at the time of publication is included in this
    repository.
 
-2. Model outputs default to `/models`, matching the original server setup. Users
+3. Model outputs default to `/models`, matching the original server setup. Users
    running elsewhere may want to adjust this path or provide an equivalent
    mount point.
 
-3. The `--no_update` option is intended to suppress database updates, but a
+4. The `--no_update` option is intended to suppress database updates, but a
    small amount of database path bookkeeping is still present in the current
    scripts.
 
-4. `seed_weights_run.py` uses a fixed set of model IDs to compute the shaping
+5. `seed_weights_run.py` uses a fixed set of model IDs to compute the shaping
    eigenspectrum scaffold. Those IDs refer to the original model database.
 
-5. The `--no_train` path in `seed_weights_run.py` was not the primary use case
+6. The `--no_train` path in `seed_weights_run.py` was not the primary use case
    for the manuscript eigenspectrum intervention workflow.
 
-6. `genFactory.create(...)` currently uses the manuscript training batch size
+7. `genFactory.create(...)` currently uses the manuscript training batch size
    of 2 internally, even though the surrounding parameter dictionaries also
    carry a `batch_size` field.
 
-7. Stored recurrent-weight logging assumes the manuscript model size of
+8. Stored recurrent-weight logging assumes the manuscript model size of
    128 recurrent units. This matches the reported experiments.
 
-8. The custom RNN layer uses Keras/TensorFlow internals from the environment in
+9. The custom RNN layer uses Keras/TensorFlow internals from the environment in
    which the models were developed. Reusing the code in a new environment may
    require matching package versions.
 
