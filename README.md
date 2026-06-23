@@ -6,9 +6,8 @@ for the manuscript:
 **Structured experience shapes strategy learning and neural dynamics in the
 medial entorhinal cortex**
 
-The code is provided as a transparent record of the custom modeling workflow
-used in the study. It is intended to help readers understand how the RNNs were
-constructed and trained, not to serve as a maintained software package.
+The code is provided as a record of the custom modeling workflow
+used in the study.
 
 ## Manuscript Context
 
