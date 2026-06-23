@@ -146,21 +146,25 @@ Some manuscript analyses also used packages such as scikit-learn, JAX, and
 spikeinterface, but those analyses are not all included in this minimal RNN
 training release.
 
-## External Code and Data Expectations
+## External Model Database Metadata
 
-The scripts expect the lab's model database helper module:
+The training scripts import:
 
 ```python
-import models_database as mdb
+import models_database as mdb 
 ```
 
-That module is maintained separately from this repository. In the original
-environment, it provides model/task/project lookup, database insertion, model
-attribute retrieval, and saved-model path tracking.
+For this release, the companion metadata helper is available here:
 
-The trained networks and animal behavior/electrophysiology data are also
-handled outside this small source-code release. The manuscript's code and data
-availability statements describe those resources separately.
+https://github.com/heyslab/models_database-public/tree/main
+
+That repository contains the public `models_database` helper code and a
+sanitized SQL dump of the model metadata tables used for the manuscript. The 
+dump is provided to document the model IDs, task labels, project labels,
+saved-model paths, and parameter attributes referenced by the training scripts.
+
+This companion repository is intended as an archival transparency resource for 
+the manuscript, not as a supported database package.
 
 ## Example Workflow
 
@@ -188,8 +192,11 @@ Task names must correspond to branches in `genFactory.create(...)`.
 This repository is an archival code release accompanying the manuscript. A few
 implementation details reflect the original analysis environment:
 
-1. `models_database` is a separate local dependency. The training scripts expect
-   it to be importable in the Python environment used to run these files.
+1. `models_database` is provided separately at
+   https://github.com/heyslab/models_database-public/tree/main. It documents the 
+   manuscript model metadata and preserves the API expected by these scripts.
+   A sanitized SQL dump is included in the companion `models_database-public`
+   repository.
 
 2. Model outputs default to `/models`, matching the original server setup. Users
    running elsewhere may want to adjust this path or provide an equivalent
