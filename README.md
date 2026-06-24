@@ -462,7 +462,41 @@ paths to the processed behavior/ephys data and write outputs to absolute paths
 under `/analysis/ms_figures/`. Users running the scripts on a different system
 may need to adjust those paths or provide equivalent directory structures.
 
+### Figure 7
 
+Figure 7 scripts are in `ms_figures/probe_mice/`:
+
+```text
+ms_figures/probe_mice/probe_performance_andShuffle.py  # Figure 7b
+ms_figures/probe_mice/probe_rnn_performance.py         # Figure 7c
+ms_figures/probe_mice/allprobes_lick_raster.py         # Figure 7d,e,f,g
+```
+
+These scripts analyze the mouse probe-trial behavior and compare the observed
+probe responses with the corresponding RNN predictions.
+
+The following small cached summary file is included to support the Figure 7
+probe-behavior panel:
+
+```text
+ms_figures/probe_mice/shuffle_results.csv
+```
+
+The Figure 7 scripts also depend on processed behavior files generated outside
+this repository. In the original analysis environment, these include:
+
+```text
+/data3/jack/goPercentages.csv
+/heys-nas-LabData/Cambria/Jack Project - tDNMS to probe (MM, LL)/BaselineAndProbes/*/*/behavior.h5
+```
+
+The RNN probe-performance script uses trained model paths and metadata from the
+companion `models_database` release.
+
+As in the original analysis environment, these scripts write outputs to
+absolute paths under `/analysis/ms_figures/`. Users running the scripts on a
+different system may need to adjust those paths or provide equivalent processed
+behavior files.
 
 ## AI Assistance Disclosure
 
