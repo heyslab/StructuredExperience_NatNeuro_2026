@@ -1,0 +1,23 @@
+name: keras
+channels:
+  - defaults
+dependencies:
+  - pip
+  - python==3.12.2
+  - pandas
+  - matplotlib
+  - scikit-learn
+  - cmake
+  - umap-learn
+  - ipykernel
+  - igraph
+  - python-igraph
+  - networkx
+  - python-louvain
+  - statsmodels
+  - mayavi
+  - qt
+  - importlib_metadata
+  - plotly
+  - pingouin
+  - libsqlite

@@ -1,0 +1,16 @@
+name: jax2
+channels:
+  - defaults
+dependencies:
+  - python==3.11.11
+  - jax
+  - numpy
+  - matplotlib
+  - h5py
+  - tensorflow
+  - pandas
+  - scikit-learn
+  - plotly
+  - python-kaleido
+  - tables
+  - moviepy
