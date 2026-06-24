@@ -238,6 +238,34 @@ figures and extended data include additional analyses of:
 - Mouse behavior and MEC recordings.
 - Probe-trial predictions and behavioral validation.
 
+## Included Figure Analysis Scripts
+
+This release currently includes the core RNN training code and the manuscript
+analysis scripts for Figure 1. Additional figure scripts may be added as the 
+release is curated figure-by-figure.
+
+### Figure 1
+
+Figure 1 scripts are in `ms_figures/`:
+
+```text
+ms_figures/avg_training.py              # Figure 1c
+ms_figures/example_units.py             # Figure 1d,f
+ms_figures/example_units_no_shaping.py  # Figure 1e,g
+ms_figures/model_performance.py         # Figure 1h,i
+ms_figures/noisy_errors_allmodels.py    # Figure 1j,k
+ms_figures/jitter_errors_allmodels.py   # Figure 1l,m
+```
+
+The following small cached data files are included to support the Figure 1
+analysis scripts:
+
+```text
+ms_figures/testing_data.hdf
+ms_figures/noisy_errors_allmodels.hdf
+ms_figures/jitter_errors.hdf
+```
+
 ## AI Assistance Disclosure
 
 This README draft was generated with AI assistance using the manuscript text and
