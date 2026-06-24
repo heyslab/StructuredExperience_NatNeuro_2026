@@ -1,4 +1,4 @@
-# [Figure 6f,g,h]
+# [Figure 6f,g,h, S8f,g]
 import os
 import sys
 
