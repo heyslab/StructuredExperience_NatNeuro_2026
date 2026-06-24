@@ -17,8 +17,6 @@ from analysis_tools.mpl_helpers import PdfPlotter
 import matplotlib.gridspec as gridspec
 from scipy.ndimage import gaussian_filter1d
 
-from analysis_tools import pd_helpers as pdH
-
 TRIAL_COLORS = {'LS': '#eb0d8c', 'SL': '#2bace2', 'SS': '#f89521', 'LL': '#253D5B', 'S': 'k', 'L': 'r',
                 'MM': '#DA627D', 'XL': '#96ACB7'}
 

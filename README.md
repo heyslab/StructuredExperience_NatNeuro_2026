@@ -498,6 +498,25 @@ absolute paths under `/analysis/ms_figures/`. Users running the scripts on a
 different system may need to adjust those paths or provide equivalent processed
 behavior files.
 
+### Extended Data Figure 1
+
+Extended Data Figure 1 scripts are in `ms_figures/`:
+
+```text
+ms_figures/quantify_errors_figure.py  # Extended Data Figure 1
+ms_figures/noisy_error_compare.py     # Extended Data Figure 1b,c,d,e
+```
+
+These scripts quantify error-like response peaks in trained RNNs and compare
+model responses under increased input-noise conditions.
+
+The following cached data file is included to support the noise-comparison
+panels:
+
+```text
+ms_figures/extra_short_data.hdf
+```
+
 ## AI Assistance Disclosure
 
 This README draft was generated with AI assistance using the manuscript text and
