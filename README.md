@@ -145,6 +145,7 @@ pyzmq
 ```markdown
 The included figure scripts additionally use plotting/statistics packages such
 as `matplotlib`, `scipy`, `statsmodels`, `scikit-learn`, and `pingouin`.
+```
 
 ## External Model Database Metadata
 
@@ -634,6 +635,41 @@ ms_figures/fp_analysis/leaky_rnn.py
 
 `ms_figures/s_cue_test.py` uses trained model paths and metadata from
 `models_database` but does not require a local cache file.
+
+### Extended Data Figure 7
+
+Extended Data Figure 7 scripts are in `ms_figures/time_decoding/` and
+`ms_figures/sl_analysis/`:
+
+```text
+ms_figures/time_decoding/sl_time_decoding_ex.py  # Extended Data Figure 7a,b,c
+ms_figures/sl_analysis/tangling_sl.py            # Extended Data Figure 7d
+```
+
+These scripts compare SL-only shaping followed by full-task training
+(`SL/FT`) with standard non-match shaping followed by full-task training
+(`S/FT`). The time-decoding script plots example within- and across-context
+decoding matrices for LS- and SL-trained decoders and summarizes the
+cross-context decoding error. The tangling script compares the trajectory
+tangling of `SL/FT` and `S/FT` model activity.
+
+The time-decoding analysis expects precomputed per-model decoding files stored
+next to the trained model directories referenced by `models_database`:
+
+```text
+model.<model_id>_time_decoding.h5
+```
+
+These per-model files are distinct from the local
+`ms_figures/time_decoding/time_decoding.h5` cache used by other time-decoding
+example scripts.
+
+The tangling analysis reuses the shared tangling helper included for Extended
+Data Figure 2:
+
+```text
+ms_figures/tangling.py
+```
 
 ## AI Assistance Disclosure
 
