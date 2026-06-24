@@ -366,6 +366,104 @@ Only the fixed-point finder components needed for the manuscript RNN analyses
 are included. The Apache 2.0 license text and original source-file notices are 
 retained with that code.
 
+### Figure 5
+
+Figure 5 scripts are in `ms_figures/`:
+
+```text
+ms_figures/avg_training.py                  # Figure 5b,f
+ms_figures/shaping_tasks_performance.py     # Figure 5c,g
+ms_figures/shaping_pca.py                   # Figure 5d
+ms_figures/mse_comparison.py                # Figure 5h
+```
+
+These scripts analyze alternative shaping curricula and their effects on model
+training, task performance, and recurrent state-space structure. The
+`avg_training.py` script is shared with Figure 1 and also generates the Figure 5
+training-summary panels.
+
+The following cached data file is included to support the Figure 5 shaping-task
+performance panels:
+
+```text
+ms_figures/shaping_tasks_testing_data.hdf
+```
+
+The Figure 5 scripts use trained model paths, task labels, and model attributes
+from the companion `models_database` release. `avg_training.py` also reads
+per-model training-history files from the trained-model output archive, named
+like:
+
+```text
+<model_path>.dat.h5
+```
+
+As in the original analysis environment, these scripts write outputs to
+absolute paths under `/analysis/ms_figures/`. Users running the scripts on a
+different system may need to adjust those output paths or create equivalent
+directories.
+
+### Figure 6
+
+Figure 6 scripts are in `ms_figures/ephys_behvior/`,
+`ms_figures/ephys_time_decoding/`, and `ms_figures/ephys_pca_plots/`:
+
+```text
+ms_figures/ephys_behvior/performance_plot.py                 # Figure 6b,d
+ms_figures/ephys_time_decoding/spikes_by_cell_figure.py      # Figure 6e
+ms_figures/ephys_time_decoding/test_ephys_decode.py          # Figure 6f,g,h
+ms_figures/ephys_time_decoding/time_coding_single_trials.py  # Figure 6i
+ms_figures/ephys_pca_plots/paper_figure.py                   # Figure 6j,k
+```
+
+These scripts analyze mouse behavior and MEC electrophysiology data from the
+structured-experience experiments. They generate the behavioral performance
+summary, example neural responses, neural time-decoding analyses, and
+population-state summaries shown in Figure 6.
+
+The behavior summary script uses the following small CSV files, included next
+to the script:
+
+```text
+ms_figures/ephys_behvior/sl_only_avg.csv
+ms_figures/ephys_behvior/sl_by_type.csv
+ms_figures/ephys_behvior/tdnms_control.csv
+ms_figures/ephys_behvior/ctrl_by_type.csv
+```
+
+The ephys decoding and population-state scripts depend on processed
+electrophysiology files generated outside this repository, including per-session
+`spikes.h5`, `behavior.h5`, and `analysis/time_decoding.h5` files. These large
+processed data files are not included directly in the GitHub repository.
+
+The helper script used to generate the per-session ephys time-decoding files is
+included here:
+
+```text
+ms_figures/ephys_time_decoding/time_decoding_ephys.py
+```
+
+It expects a session directory containing:
+
+```text
+spikes.h5
+```
+
+and writes:
+
+```text
+analysis/time_decoding.h5
+```
+
+within that session directory.
+
+As in the original analysis environment, the Figure 6 scripts contain absolute
+paths to the processed behavior/ephys data and write outputs to absolute paths
+under `/analysis/ms_figures/`. Users running the scripts on a different system
+may need to adjust those paths or provide equivalent directory structures.
+
+
+
 ## AI Assistance Disclosure
 
 This README draft was generated with AI assistance using the manuscript text and
