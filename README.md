@@ -241,7 +241,7 @@ figures and extended data include additional analyses of:
 ## Included Figure Analysis Scripts
 
 This release currently includes the core RNN training code and the manuscript
-analysis scripts for Figure 1 and 2. Additional figure scripts may be added as the 
+analysis scripts for Figure 1, 2 and 3. Additional figure scripts may be added as the 
 release is curated figure-by-figure.
 
 ### Figure 1
@@ -283,6 +283,38 @@ time-decoding example panels:
 
 ```text
 ms_figures/time_decoding/time_decoding.h5
+```
+
+### Figure 3
+
+Figure 3 scripts are in `ms_figures/` and related subfolders:
+
+```text
+ms_figures/avg_weights.py                            # Figure 3a,b,c
+ms_figures/weights_analysis/weights_eigs_figure.py   # Figure 3d,e
+ms_figures/weights_analysis/weights_eigs_decoding.py # Figure 3f
+ms_figures/seed_training/avg_training.py             # Figure 3g
+ms_figures/seed_training/seed_run_pca.py             # Figure 3h
+ms_figures/seed_training/seed_performance.py         # Figure 3i
+```
+
+These scripts analyze the recurrent connectivity and eigenspectrum structure of
+the manuscript RNNs, including the shaped-model weight profiles, eigenvalue
+distributions, decoding from eigenspectrum features, and the seed-weight
+training intervention.
+
+The fixed-point helper used
+by the connectivity/eigenspectrum analyses is included here:
+
+```text
+ms_figures/fp_analysis/leaky_rnn.py
+```
+
+The following cached data file is included to support the Figure 3 seed-training
+behavior panel:
+
+```text
+ms_figures/seed_training/testing_data.hdf
 ```
 
 ## AI Assistance Disclosure
