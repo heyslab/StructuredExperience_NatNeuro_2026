@@ -493,11 +493,6 @@ this repository. In the original analysis environment, these include:
 The RNN probe-performance script uses trained model paths and metadata from the
 companion `models_database` release.
 
-As in the original analysis environment, these scripts write outputs to
-absolute paths under `/analysis/ms_figures/`. Users running the scripts on a
-different system may need to adjust those paths or provide equivalent processed
-behavior files.
-
 ### Extended Data Figure 1
 
 Extended Data Figure 1 scripts are in `ms_figures/`:
@@ -515,6 +510,28 @@ panels:
 
 ```text
 ms_figures/extra_short_data.hdf
+```
+
+### Extended Data Figure 2
+
+Extended Data Figure 2 scripts are in `ms_figures/` and
+`ms_figures/time_decoding/`:
+
+```text
+ms_figures/multimodel_pca.py                         # Extended Data Figure 2a,b
+ms_figures/tangling.py                               # Extended Data Figure 2c
+ms_figures/time_decoding/time_decoding_examples.py   # Extended Data Figure 2d,e
+```
+
+These scripts show state-space examples across multiple trained RNNs, quantify
+trajectory tangling across shaping conditions, and reuse the time-decoding
+example workflow from Figure 2 for additional example panels.
+
+The following cached data file is included to support the time-decoding example
+panels:
+
+```text
+ms_figures/time_decoding/time_decoding.h5
 ```
 
 ## AI Assistance Disclosure
