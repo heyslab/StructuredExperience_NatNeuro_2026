@@ -317,6 +317,55 @@ behavior panel:
 ms_figures/seed_training/testing_data.hdf
 ```
 
+### Figure 4
+
+Figure 4 scripts are in `ms_figures/fp_analysis/`:
+
+```text
+ms_figures/fp_analysis/flowfield_figure.py              # Figure 4a,b,c
+ms_figures/fp_analysis/dynamic_motifs.py                # Figure 4d, S3a,b,c
+ms_figures/fp_analysis/limit_flows_pca_ns_figure.py     # Figure 4e
+ms_figures/fp_analysis/limit_flows_pca_figure.py        # Figure 4f, S6a,b
+ms_figures/fp_analysis/morph_task.py                    # Figure 4g,i
+ms_figures/fp_analysis/morph_task_output_figure.py      # Figure 4h,j
+```
+
+These scripts analyze fixed and slow points in the trained RNNs, including
+state-space flow fields, dynamic motifs, limit-cycle structure, and the model
+response to morphing the timing structure of the task.
+
+The Figure 4 scripts use trained model paths and metadata from the companion
+`models_database` release. Several of the scripts also expect fixed-point
+results saved next to each trained model as: 
+
+```text
+fps_info.pkl
+```
+
+The fixed-point helper code used by these analyses is included here:
+
+```text
+ms_figures/fp_analysis/leaky_rnn.py
+ms_figures/fp_analysis/fixed_point_finder/fixed_points.py
+```
+
+The utility used to find and save fixed points is included separately:
+
+```text
+fpf_code/find_and_save_fps.py
+```
+
+That utility includes a small vendored subset of the Apache-2.0
+`computation-thru-dynamics` fixed-point finder code:
+
+```text
+fpf_code/computation-thru-dynamics/
+```
+
+Only the fixed-point finder components needed for the manuscript RNN analyses
+are included. The Apache 2.0 license text and original source-file notices are 
+retained with that code.
+
 ## AI Assistance Disclosure
 
 This README draft was generated with AI assistance using the manuscript text and
