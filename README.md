@@ -142,9 +142,9 @@ PyTables or another pandas HDF5 backend
 pyzmq
 ```
 
-Some manuscript analyses also used packages such as scikit-learn, JAX, and
-spikeinterface, but those analyses are not all included in this minimal RNN
-training release.
+```markdown
+The included figure scripts additionally use plotting/statistics packages such
+as `matplotlib`, `scipy`, `statsmodels`, `scikit-learn`, and `pingouin`.
 
 ## External Model Database Metadata
 
@@ -241,7 +241,7 @@ figures and extended data include additional analyses of:
 ## Included Figure Analysis Scripts
 
 This release currently includes the core RNN training code and the manuscript
-analysis scripts for Figure 1. Additional figure scripts may be added as the 
+analysis scripts for Figure 1 and 2. Additional figure scripts may be added as the 
 release is curated figure-by-figure.
 
 ### Figure 1
@@ -264,6 +264,25 @@ analysis scripts:
 ms_figures/testing_data.hdf
 ms_figures/noisy_errors_allmodels.hdf
 ms_figures/jitter_errors.hdf
+```
+
+### Figure 2
+
+Figure 2 scripts are in `ms_figures/`:
+
+```text
+ms_figures/pca_states.py                         # Figure 2a
+ms_figures/explained_var.py                      # Figure 2b
+ms_figures/tangling_example.py                   # Figure 2c
+ms_figures/time_decoding/time_decoding_examples.py  # Figure 2d,f
+ms_figures/time_decoding/time_decoding_plots.py     # Figure 2e,g
+```
+
+The following cached data file is included to support the Figure 2
+time-decoding example panels:
+
+```text
+ms_figures/time_decoding/time_decoding.h5
 ```
 
 ## AI Assistance Disclosure
