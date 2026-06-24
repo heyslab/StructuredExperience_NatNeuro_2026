@@ -70,7 +70,7 @@ def plot_pca(ax, pcs, dims=(1, 2)):
 def main(argv):
     jP.set_rcParams(plt)
     dpi = 300
-    path = Path('/analysis/ms_figures/ephys_dim_updated_12.6')
+    path = Path('/analysis/ms_figures/ephys_dim')
     path.mkdir(exist_ok=True, parents=True)
     sl_shaping_paths = list(map(
         Path,
@@ -98,7 +98,7 @@ def main(argv):
     all_paths = pd.Series(shaping_paths + sl_shaping_paths,
                           index=pd.MultiIndex.from_frame(model_types))
 
-    spikes = all_paths.apply(lambda x: pd.read_hdf('spikes_updated.h5', key=x.parts[-1]))
+    spikes = all_paths.apply(lambda x: pd.read_hdf('spikes.h5', key=x.parts[-1]))
     def fix_spikes(spikes):
         fixed = spikes.T
         fixed.index.names = fixed.index.names[:-1] + ['idx']

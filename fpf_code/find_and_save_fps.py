@@ -201,7 +201,7 @@ def main(argv):
 
     plt.show()
 
-    save_path = path / 'fps_info_updated.pkl'
+    save_path = path / 'fps_info.pkl'
     if save_path.exists():
         with open(save_path, 'rb') as f:
             fps = pickle.load(f)

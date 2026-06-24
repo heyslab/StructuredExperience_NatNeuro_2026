@@ -30,7 +30,7 @@ def main(args):
 
     dpi = 300
     jP.set_rcParams(plt)
-    data_path = Path('/data3/jack/goPercentages.csv')
+    data_path = Path('goPercentages.csv')
     shuffle_data_path = Path('shuffle_results.csv')
     shuffle_data = pd.read_csv(shuffle_data_path, index_col=0)
     go_percents = pd.read_csv(data_path)
