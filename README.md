@@ -135,6 +135,37 @@ PyYAML
 pyzmq
 ```
 
+## Conda Environment Files
+
+The original analyses used separate Conda environments for TensorFlow/Keras
+model training and JAX-based fixed-point analysis. Environment export files are
+included in:
+
+```text
+conda_envs/environment-tensorflow.yml
+conda_envs/environment-tensorflow-full.yml
+conda_envs/environment-jax.yml
+conda_envs/environment-jax-full.yml
+```
+
+The shorter files were exported with `conda env export --from-history` and are
+the recommended starting point for recreating portable environments:
+
+```bash
+conda env create -f conda_envs/environment-tensorflow.yml
+conda env create -f conda_envs/environment-jax.yml
+```
+
+The `*-full.yml` files are included as archival records of the exact lab
+environments used during analysis. They may be less portable across operating
+systems or CUDA/library versions, but can be useful when matching the original
+software stack closely.
+
+Use the TensorFlow environment for model training and most plotting scripts
+that load trained Keras models. Use the JAX environment for fixed-point finder
+workflows and scripts under `fpf_code/` or `ms_figures/fp_analysis/` that
+perform JAX-based fixed-point calculations.
+
 The custom RNN layer uses TensorFlow/Keras internals from the environment in
 which the models were developed. Reusing the code in a new environment may
 require matching package versions.
