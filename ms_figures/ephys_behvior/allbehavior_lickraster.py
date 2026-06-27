@@ -1,4 +1,4 @@
-# [Figure S8c,d]
+# [Figure S9c,d]
 import sys
 sys.path.append('../')
 

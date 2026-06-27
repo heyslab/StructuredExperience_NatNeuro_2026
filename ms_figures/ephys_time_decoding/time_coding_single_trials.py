@@ -1,4 +1,4 @@
-# [Figures 6i]
+# [Figure 6i]
 
 import os
 import sys
@@ -167,5 +167,4 @@ def main(argv):
    
 if __name__ == '__main__':
     main(sys.argv[1:])
-
 

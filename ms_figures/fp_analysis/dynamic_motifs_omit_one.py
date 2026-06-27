@@ -1,4 +1,4 @@
-# [Figure S9a]
+# [Figure S7a]
 import os
 os.environ['XLA_PYTHON_CLIENT_PREALLOCATE'] = 'false'
 

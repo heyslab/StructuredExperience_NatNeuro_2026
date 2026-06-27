@@ -1,4 +1,4 @@
-# [Figure7d,e,f,g]
+# [Figure 7d,e,f,g]
 import sys
 sys.path.append('../')
 sys.path.append('/home/jack/code/ephys_tools/scripts/tdnms')

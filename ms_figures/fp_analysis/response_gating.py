@@ -1,4 +1,4 @@
-# [Figure S6c]
+# [Figure S5c]
 import os
 os.environ['XLA_PYTHON_CLIENT_PREALLOCATE'] = 'false'
 os.environ['XLA_PYTHON_CLIENT_MEM_FRACTION'] = '0.25'

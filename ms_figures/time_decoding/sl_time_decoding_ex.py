@@ -1,4 +1,4 @@
-# [Figure S7a,b,c]
+# [Figure S8a,b,c]
 import os
 import sys
 
